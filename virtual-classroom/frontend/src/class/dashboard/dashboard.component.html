@@ -1,0 +1,54 @@
+<div class="navbar" >
+  
+  <a routerLink="/signout"  >signout</a>
+  
+  <br>
+  
+</div>
+
+
+
+<h1>Course List</h1>
+
+<div class="row-card-course">
+ <div *ngFor="let course of courses" class="course-card">
+    <div class="thumbnail">
+      <div class="course-card-image">
+        <a href="/">
+          <img class="not-img img-res" src="https://assets.entrepreneur.com/content/3x2/2000/20141031174145-15-free-online-learning-sites.jpeg">
+        </a>
+      </div>
+      <div class="caption">
+        <div class="course-title">
+          <h3 class="course-title-heading">
+            <h1>{{ course.name }}</h1>
+          </h3>
+        </div>
+        <div class="course-fav-cost row">
+          <div class="course-rating-star">
+            <small>Rating</small>
+            <br>
+            <div class="course-rating">
+              <span><span> ☆</span><span> ☆</span><span> ☆</span><span class="active"> ☆</span><span> ☆</span></span>
+            </div>
+          </div>
+          <div class="course-fav-price text-right">
+            <small>Price</small>
+            <div class="price-dollar">₹234.50</div>
+          </div>
+        </div>
+        <div class="course-card-foot">
+          <div class="course-card-foot-name main-name">
+            {{course.name}}
+          </div>
+
+          <button (click)="more_details(course.id,course)">Enroll </button>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
+
+<div *ngIf="courses && courses.length === 0">
+ No courses available.
+</div>

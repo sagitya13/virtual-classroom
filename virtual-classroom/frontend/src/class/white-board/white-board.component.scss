@@ -1,0 +1,10 @@
+.whiteboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .whiteboard-canvas {
+    border: 1px solid black;
+    background-color: #fff;
+  }

@@ -1,0 +1,41 @@
+ 
+<div class="navbar">
+  <a routerLink="/quiz-home" routerLinkActive="active">Start Quizzzz</a> 
+  <a routerLink="/material" routerLinkActive="active">Material</a>
+  <a routerLink="/video" routerLinkActive="active">Join class</a>
+  <a (click)="openchat()">Chat</a>
+</div>
+
+ 
+   
+
+   <div class="container mt-4">
+    <div class="row">
+       <div class="col-md-4">
+         <ul class="list-group course-list">
+           <li *ngFor="let course of courses" class="list-group-item" (click)="showCourseDetails(course.id)">
+             {{ course.name }}
+           </li>
+         </ul>
+       </div>
+       <div class="col-md-8">
+         <div *ngIf="selectedCourse" class="course-details">
+          <b><h2>Name of the course :{{ selectedCourse.name }}</h2>
+            <p>Description:{{ selectedCourse.description }}</p>
+            <p>CourseId:{{selectedCourse.id}}</p>
+            <p>Course start Date:{{selectedCourse.date|date}}</p>
+            <p>Course Time:{{selectedCourse.time}}</p>
+            <p>Course type:{{selectedCourse.type}}</p>
+            <p>Course Teacher:{{selectedCourse.teacher_id}}</p>
+            <p>Course Start_time:{{selectedCourse.start_time}}</p>
+            <p>Course Material:{{selectedCourse.material_id}}</p>
+            <p>Student_Id:{{selectedCourse.student_id}}</p></b>
+           <!-- Add more course details here -->
+         </div>
+       </div>
+    </div>
+   </div>
+   
+
+
+ 
