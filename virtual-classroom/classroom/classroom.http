@@ -1,6 +1,0 @@
-@classroom_HostAddress = http://localhost:5107
-
-GET {{classroom_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
