@@ -1,0 +1,50 @@
+<header>
+  <div class="navbar">
+    <div class="navbar-logo">{{ selectedCourse.name }}</div>
+    <nav></nav>
+  </div>
+</header>
+
+<body ng-app="myApp" ng-controller="myCtrl" class="back">
+  <div class="container">
+    <div class="left-side">
+      <div class="row">
+        <ul class="list-group">
+          <li
+            *ngFor="let course of courses"
+            class="list-group-item"
+            (click)="showCourseDetails(course.id)"
+          >
+            {{ course.name }}
+          </li>
+        </ul>
+        <div *ngIf="selectedCourse" class="course-details">
+          <h1 class="mb-3">{{ selectedCourse.name }}</h1>
+          <p><strong>Description:</strong> {{ selectedCourse.description }}</p>
+          <p><strong>Course ID:</strong> {{ selectedCourse.id }}</p>
+          <p>
+            <strong>Course start Date:</strong> {{ selectedCourse.date | date }}
+          </p>
+          <p><strong>Course type:</strong> {{ selectedCourse.type }}</p>
+          <p>
+            <strong>Course Teacher:</strong> {{ selectedCourse.teacher_id }}
+          </p>
+          <p>
+            <strong>Course Start Time:</strong> {{ selectedCourse.start_time }}
+          </p>
+          <p>
+            <strong>Course Material:</strong> {{ selectedCourse.material_id }}
+          </p>
+          <p><strong>Student ID:</strong> {{ selectedCourse.student_id }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="view">
+    <button (click)="Quiz()" *ngIf="role == 'student'">Start Quizzzz</button>
+    <button (click)="material()">Materials</button>
+    <button (click)="video()">Join class</button>
+    <button (click)="openchat()">Chat</button>
+    <button (click)="dashboard()">Back</button>
+  </div>
+</body>

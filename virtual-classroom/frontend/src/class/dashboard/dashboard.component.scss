@@ -1,0 +1,144 @@
+ 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #B27092;
+}
+.navbar {
+  background-color: #393E41;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.material-symbols-outlined:hover {
+  color: #ff8000;
+}
+
+.br {
+  margin-bottom: 1rem;
+}
+.course-rate{
+  color:black;
+}
+ 
+ 
+ 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+ 
+/* Form Styles */
+.form-container {
+  background-color: #D3D0CB;
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+ 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 800,
+  'GRAD' 0,
+  'opsz' 48;
+}
+ 
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-container button[type="submit"] {
+  background-color: #5392d4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Course Cards Styles */
+.row-card-course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+.course-card {
+  background-color: #D3D0CB;
+  margin: 10px;
+  padding: 20px;
+  width: calc(33% - 20px);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.course-title-heading {
+  margin: 0;
+  padding: 0;
+}
+
+.course-rating {
+  color: #f9a825;
+}
+
+.price-dollar {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #2cb0c7;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}

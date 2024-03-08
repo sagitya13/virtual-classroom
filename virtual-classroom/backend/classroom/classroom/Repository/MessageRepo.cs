@@ -8,8 +8,7 @@ namespace classroom.Repository
     {
         readonly string connectionString = "";
         public MessageRepo()
-        {
-            // Update the connection string with your database details
+        { 
             connectionString = @"Data Source=APINP-ELPT4W3IG\SQLEXPRESS;Initial Catalog=backend;Persist Security Info=True;User ID=tap2023;Password=tap2023;Encrypt=False";
         }
         public List<Messages> GetMessageById(int CourseId)
@@ -32,8 +31,8 @@ namespace classroom.Repository
                                 {
 
                                     Id = Convert.ToInt32(reader["Id"]),
-                                    MessageContent = reader["MessageContent"].ToString(), // Corrected column name
-                                    UserName = reader["UserName"].ToString(), // Corrected column name
+                                    MessageContent = reader["MessageContent"].ToString(), 
+                                    UserName = reader["UserName"].ToString(),  
                                     CourseId = Convert.ToInt32(reader["CourseId"])
                                 });
                             }
@@ -57,11 +56,11 @@ namespace classroom.Repository
                     command.Parameters.AddWithValue("@UserName", message.UserName);
                     command.Parameters.AddWithValue("@CourseId", message.CourseId);
                     connection.Open();
-                    int Id = Convert.ToInt32(command.ExecuteScalar()); // Get the newly inserted Id
-                    message.Id = Id; // Update the message object with the newly generated Id
+                    int Id = Convert.ToInt32(command.ExecuteScalar());  
+                    message.Id = Id; 
                 }
             }
-            return message; // Return the message object with the newly assigned Id
+            return message; 
         }
     }
 

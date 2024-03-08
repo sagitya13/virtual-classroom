@@ -70,42 +70,6 @@ public class MaterialsRepo : IMaterialsRepo
         }
 
         
-
-       
-
-       /* public Materials[] GetAllMaterials()
-        {
-            List<Materials> materialsList = new List<Materials>();
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string selectQuery = @"SELECT * FROM Materials";
-                    using (SqlCommand command = new SqlCommand(selectQuery, connection))
-                    {
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                materialsList.Add(new Materials
-                                {
-                                    id = reader.GetInt32(reader.GetOrdinal("id")),
-                                    Title = reader.GetString(reader.GetOrdinal("Title")),
-                                    Type = reader.GetString(reader.GetOrdinal("Type")),
-                                    upload_date = reader.GetDateTime(reader.GetOrdinal("upload_date"))
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            return materialsList.ToArray();
-        }*/
     }
 
 

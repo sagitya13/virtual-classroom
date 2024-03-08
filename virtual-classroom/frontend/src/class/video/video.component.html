@@ -1,0 +1,25 @@
+<div class="video-container">
+  <h1>Online Class</h1>
+  <div class="video-box">
+     <div class="local-video" id="local-video"></div>
+     <div class="remote-video" id="remote-video"></div>
+  </div>
+  <b><span>Enter PeerId: <br />{{ peerId }}</span></b>
+  <div class="controls">
+     <input type="text" placeholder="Peer Id" [(ngModel)]="peerIdShare" />
+     <button class="button" (click)="connectWithPeer()">Call Peer</button>
+     <button class="button" (click)="screenShare()">Screen share</button>
+     <button class="button" (click)="markAttendance()">Mark Attendance</button>
+     <button class="button" (click)="hangUp()">Hang Up</button> 
+ 
+     <button class="button" (click)="toggleChat()">Group Chat</button>
+     <button class="button" (click)="toggle()">Share Materials</button>
+  </div>
+ </div>
+ 
+ <div class="whiteboard-container">
+  <app-white-board></app-white-board> 
+  <app-chat *ngIf="isChatOpen"></app-chat>
+  <app-material *ngIf="ismessage"></app-material>
+ </div>
+ 

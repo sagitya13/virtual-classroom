@@ -1,0 +1,51 @@
+<nav class="nav">
+  <a class="navbar-brand"  >Materials</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    
+  </button>
+  </nav>
+
+  
+  <form [formGroup]="materialForm" (ngSubmit)="uploadMaterial()" *ngIf="role == 'admin' || role == 'teacher'">
+  <div class="vin">    
+     
+     <label for="fileName">file name:</label>
+     <input id="courseName" type="text" formControlName="fileName" />
+     <p></p>
+ <br>
+     <label for="filePath">INSERT FILE:</label>
+     <input type="file" (change)="handleFileInput($event)" id="file" accept="pdf/*" />
+     <br>
+     <br>
+     <p></p>
+     <label for="courseId">Course ID:</label>
+  <input type="number" id="courseId" formControlName="courseId" required />
+  </div>
+  <div align="center">
+     <button type="submit" [disabled]="!materialForm.valid">SUBMIT</button>
+  </div>
+ </form>
+ 
+ 
+ <div class="material-list-container-">
+  <h2>Material List</h2>
+  <table class="table table-sm table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>File</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let material of materials">
+          <td>{{ material.fileName }}</td>
+          <td>
+            <a [href]="getFileUrl(material.filePath)" target="_blank">{{ material.filePath }}</a>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+ </div>
+ 
+ 
+ <button (click)="dashboard()">Back</button>

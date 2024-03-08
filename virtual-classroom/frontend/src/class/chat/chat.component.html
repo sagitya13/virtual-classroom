@@ -1,0 +1,21 @@
+<div class="page">
+  <div class="chat-container">
+    <form (ngSubmit)="onSubmit()" #messageForm="ngForm" class="form-container">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" [(ngModel)]="MessageContent" required></textarea>
+      <label for="username">Username:</label>
+      <input type="text"id="username" name="username" [(ngModel)]="UserName" required />
+      <label for="CourseId">Course ID:</label>
+      <input type="number" id="CourseId" [(ngModel)]="CourseId" name="CourseId" required />
+      <button type="submit">Submit</button>
+      <br>
+      <button (click)="dashboard()">Back</button>
+    </form>
+    <div *ngIf="isLoading" class="loading">Loading</div>
+    <div *ngIf="!isLoading" class="messages-container">
+      <div *ngFor="let message of messages" class="message">
+        <p>{{ message.userName }}: {{ message.messageContent }}</p>
+      </div>
+    </div>
+  </div>
+</div>

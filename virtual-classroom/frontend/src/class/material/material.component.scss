@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: #3b9959;
+   }
+   .navbar {
+    background-color: #393E41;
+    border-bottom: 1px solid #1a1c1e;
+   }
+   .nav{
+    background-color: #393E41;
+    padding:10px;
+    color: white;
+   }
+   .navbar-brand {
+    color: #f8f9fb;
+   }
+ 
+   
+   button {
+    color: white; 
+    font-family: 'Oswald', sans-serif;
+    background-color: #646464;
+    font-size: 20px;
+    
+    border-radius: 15px; 
+   }
+   
+   .vin {
+    color: #050505;
+    margin-left: 35%;
+    margin-top: 5%;
+    border: 4px solid black;
+    border-radius: 15px;
+    padding: 65px;
+    width: 30%; 
+    height: 60%; 
+   }
+   
+   #group, #year, #courseName, #file {
+    margin-left: 1%;
+   }
+   
+   .header {
+    background-color: #1a1818;
+    padding: 20px;
+    text-align: center;
+   }
+   
+   .topnav {
+    overflow: hidden;
+    background-color: #333;
+   } 
+.material-list-container- .table {
+    width: 100%;  
+    border-collapse: collapse;  
+    margin-top: 20px; 
+   }
+ 
+   .material-list-container- .thead-dark th {
+    background-color: #343a40; 
+    color: white;  
+    padding: 10px;  
+    font-size: 16px; 
+   }
+    
+   .material-list-container- .table tbody tr {
+    border-bottom: 1px solid #ddd;  
+   }
+    
+   .material-list-container- .table td,
+   .material-list-container- .table th {
+    padding: 10px;  
+    text-align: left; 
+   }
+    
+   .material-list-container- .table a {
+    color: #007bff; 
+    text-decoration: none; 
+   }
+    
+   .material-list-container- .table a:hover {
+    color: #0056b3; 
+    text-decoration: underline;  
+   }
+   
+   .topnav a {
+    float: right;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+   }
+   
+   .topnav a:hover {
+    background-color: #c12222;
+    color: black;
+   }
+   

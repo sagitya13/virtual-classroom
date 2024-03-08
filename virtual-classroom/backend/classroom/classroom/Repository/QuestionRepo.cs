@@ -25,8 +25,7 @@ namespace classroom.Repository
                 {
                     string insertQuery = @"INSERT INTO Question (id,question, Opt1, Opt2, Opt3, Opt4, answer)
                                VALUES (@id,@Question, @Opt1, @Opt2, @Opt3, @Opt4, @Answer)";
-                    //SELECT CAST(SCOPE_IDENTITY() as int);";
-
+                 
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@id", question.id);
@@ -39,7 +38,7 @@ namespace classroom.Repository
 
                         connection.Open();
 
-                        int rowsAffected = command.ExecuteNonQuery();// Assuming the Id is auto-generated and returned by the database
+                        int rowsAffected = command.ExecuteNonQuery(); 
 
 
                     }
@@ -47,8 +46,7 @@ namespace classroom.Repository
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                // Consider handling the exception more gracefully in a production environment
+                Console.WriteLine(ex.ToString()); 
             }
         }
 
@@ -78,8 +76,7 @@ namespace classroom.Repository
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                // Consider handling the exception more gracefully in a production environment
+                Console.WriteLine(ex.ToString()); 
             }
         }
 
@@ -96,8 +93,7 @@ namespace classroom.Repository
                     {
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            //CultureInfo culture = CultureInfo.InvariantCulture;
+                        { 
                             while (reader.Read())
                             {
                                 Question question=new Question();
@@ -117,8 +113,7 @@ namespace classroom.Repository
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                // Consider handling the exception more gracefully in a production environment
+                Console.WriteLine(ex.ToString()); 
             }
             return questions;
         }

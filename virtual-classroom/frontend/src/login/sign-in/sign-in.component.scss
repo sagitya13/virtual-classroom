@@ -1,0 +1,164 @@
+ 
+
+@mixin flex($content, $items) {
+  display: flex;
+  justify-content: $content;
+  align-items: $items;
+ }
+ 
+ @mixin width($width, $height) {
+  max-width: $width;
+  width: 100%;
+  max-height: $height;
+  height: 100%;
+ }
+ 
+ .signInWrapper {
+  @include flex(center, center);
+  @include width(100vw, 100vh);
+  .formWrapper {
+     @include flex(center, flex-start);
+     flex-direction: column;
+     flex-basis: 50%;
+     margin-top: 80px;
+     .headingContainer {
+       @include width(100%, 100%);
+       @include flex(center, center);
+       margin-top: 50px;
+       .heading {
+         color: #000;
+         font-family: Lato;
+         font-size: 26px;
+         font-style: normal;
+         font-weight: 600;
+         line-height: normal;
+       }
+     }
+ 
+     .formController {
+       @include flex(center, flex-start);
+       flex-direction: column;
+       gap: 3px;
+       margin: 0 auto;
+       .formFieldContainer {
+         @include flex(center, flex-start);
+         flex-direction: column;
+         padding-bottom: 10px;
+         &:nth-child(1) {
+           margin: 20px 0 0 0;
+         }
+         &:nth-child(4) {
+           margin: 0px 0 0 0;
+         }
+ 
+         .formFieldHeading {
+           color: #1276da;
+           font-family: Lato;
+           font-size: 16px;
+           font-style: normal;
+           font-weight: 500;
+           line-height: normal;
+           margin-bottom: 5px;
+         }
+         .formField {
+           width: 330px;
+           height: 40px;
+           border-radius: 14px;
+           border: 0px;
+           padding: 10px 20px;
+           background: rgba(223, 187, 213, 0.4);
+           color: rgba(0, 0, 0, 0.5);
+           font-family: lato;
+           font-size: 14px;
+           font-style: normal;
+           font-weight: 400;
+           line-height: normal;
+ 
+           &:focus {
+             outline: none;
+           }
+ 
+           &.is-invalid{
+             border: 1px solid red;
+             color: red;
+           }
+         }
+       }
+ 
+       .signInButtonContainer {
+         .signInButton {
+           cursor: pointer;
+           border-radius: 15px;
+           background: #b676b0;
+           width: 330px;
+           height: 40px;
+           text-align: center;
+           border: 0;
+           color: #000;
+           font-family: Lato;
+           font-size: 16px;
+           font-style: normal;
+           font-weight: 500;
+           line-height: normal;
+           margin-top: 20px;
+ 
+           &.is-invalid{
+             background-color: #e5eff8;
+           }
+         }
+       }
+     }
+ 
+     .loginWrapper {
+       margin: 20px auto 0 auto;
+       .loginHeading {
+         color: #b0bac3;
+         width: fit-content;
+         font-family: Lato;
+         font-size: 18px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+         margin: 0 auto;
+       }
+       .loginContainer {
+         margin: 15px auto;
+         @include flex(center, center);
+         gap : 4px;
+         .loginText {
+           color: #060707;
+           font-family: Lato;
+           font-size: 16px;
+           font-style: normal;
+           font-weight: 400;
+           line-height: normal;
+           margin: 0;
+         }
+         .loginLink {
+           color: white;
+           background-color: #1276da;
+           font-family: Lato;
+           text-decoration: none;
+           font-size: 16px;
+           font-style: normal;
+           font-weight: 400;
+           line-height: normal;
+         }
+       }
+     }
+  }
+  .button{
+    background-color: violet
+  }
+ 
+  .imageWrapper {
+     @include width(50vw, 100vh);
+     @include flex(center, center);
+     margin-top: 100px;
+     .image {
+       margin: auto;
+       @include width(30vw, 40vh);
+     }
+  }
+ }
+ 

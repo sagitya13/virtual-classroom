@@ -50,7 +50,6 @@ namespace classroom.Repository
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                // Consider logging the exception or handling it more gracefully in a production environment
             }
 
             return course;

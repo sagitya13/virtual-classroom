@@ -1,0 +1,93 @@
+<div>
+  <div class="navbar">
+    <span
+      class="material-symbols-outlined"
+      (click)="toggleForm()"
+      *ngIf="role == 'admin'||role=='teacher'"
+    >
+      add_task
+    </span>
+    <span class="material-symbols-outlined" (click)="signout()"> logout </span>
+    <br />
+  </div>
+
+  <div *ngIf="showForm" class="form-container">
+    <form [formGroup]="courseForm" (ngSubmit)="createCourse()">
+      <label for="courseId">Id:</label>
+      <input type="number" formControlName="id" id="courseId" />
+
+      <label for="courseName">Name:</label>
+      <input type="text" formControlName="name" id="courseName" />
+
+      <label for="courseDescription">Description:</label>
+      <input type="text" formControlName="description" id="courseDescription" />
+
+      <label for="courseType">Type:</label>
+      <input type="text" formControlName="type" id="courseType" />
+
+      <label for="courseDate">Date:</label>
+      <input type="date" formControlName="date" id="courseDate" />
+
+      <label for="courseTime">Time:</label>
+      <input type="time" formControlName="time" id="courseTime" />
+
+      <button type="submit" [disabled]="!courseForm.valid">Add Course</button>
+    </form>
+  </div>
+
+  <div class="back">
+    <div class="row-card-course">
+      <div *ngFor="let course of courses" class="course-card">
+        <div class="thumbnail">
+          <div class="course-card-image">
+            <a>
+              <img
+                class="not-img img-res"
+                src="https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/05/23151218/BA-Courses.png"
+              />
+            </a>
+          </div>
+          <div class="caption">
+            <div class="course-title">
+              <h3 class="course-title-heading">
+                <h1>{{ course.name }}</h1>
+              </h3>
+            </div>
+            <div class="course-fav-cost row">
+              <div class="course-rating-star">
+                <small>Rating</small>
+                <br />
+                <div class="course-rating">
+                  <span
+                    ><span class="course-rate"> ☆</span
+                    ><span class="course-rate"> ☆</span
+                    ><span class="course-rate"> ☆</span
+                    ><span class="course-rate"> ☆</span
+                    ><span class="course-rate"> ☆</span></span
+                  >
+                </div>
+              </div>
+              <div class="course-fav-price text-right">
+                <small>Price</small>
+                <div class="price-dollar">₹234.50</div>
+              </div>
+            </div>
+            <div class="course-card-foot">
+              <button class="button" (click)="more_details(course.id, course)">
+               Explore class
+              </button>
+              <span
+                class="material-symbols-outlined"
+                (click)="deleteCourse(course.id)"
+                *ngIf="role == 'admin'||role=='teacher'"
+                >delete</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="courses && courses.length === 0">No courses available.</div>
+  </div>
+</div>
