@@ -7,7 +7,7 @@ import { ChatComponent } from 'src/class/chat/chat.component';
 import { SignInComponent } from 'src/login/sign-in/sign-in.component';
 import { QuizComponent } from 'src/class/quiz/quiz.component';
 import { MaterialComponent } from 'src/class/material/material.component';
-
+import { AuthsecGuard } from './security/authsec.guard';
 import { VideoComponent } from 'src/class/video/video.component';
 
 const routes: Routes = [
@@ -18,33 +18,33 @@ const routes: Routes = [
   },
   {
     path: 'quiz',
-    component: QuizComponent,
+    component: QuizComponent,canActivate:[AuthsecGuard ]
   },
 
   {
     path: 'video/:id',
-    component: VideoComponent,
+    component: VideoComponent,canActivate:[AuthsecGuard ]
   },
   { path: 'register', component: RegisterComponent },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    component: DashboardComponent,canActivate:[AuthsecGuard ]
   },
   {
     path: 'course/:id',
-    component: CourseComponent,
+    component: CourseComponent, canActivate:[AuthsecGuard ]
   },
   {
     path: 'chat',
-    component: ChatComponent,
+    component: ChatComponent, canActivate:[AuthsecGuard ]
   },
   {
     path: 'course',
-    component: CourseComponent,
+    component: CourseComponent, canActivate:[AuthsecGuard ]
   },
 
-  { path: 'chat/:CourseId', component: ChatComponent },
-  { path: 'material/:id', component: MaterialComponent },
+  { path: 'chat/:CourseId', component: ChatComponent,canActivate:[AuthsecGuard ] },
+  { path: 'material/:id', component: MaterialComponent,canActivate:[AuthsecGuard ] },
 
   {
     path: 'sign-in',

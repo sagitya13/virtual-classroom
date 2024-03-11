@@ -58,6 +58,7 @@ export class CourseComponent implements OnInit {
     this.router.navigate(['/video', this.route.snapshot.paramMap.get('id')]);
   }
   Quiz() {
+    
     this.router.navigate(['/quiz']);
   }
 }

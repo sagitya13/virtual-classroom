@@ -50,15 +50,7 @@
    padding: 10px 0;
   }
   
-  .view {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 0 20px;
-  }
-  
+ 
   .navbar-logo {
    font-size: 1.5rem;
    font-weight: bold;
@@ -76,6 +68,40 @@
    justify-content: center;
    padding: 20px;
 }
+
+header {
+  width: 100%; /* Ensure the header takes up the full width */
+ }
+ 
+ .navbar {
+  display: flex;
+  justify-content: space-between; /* Aligns items with space between them */
+  align-items: center; /* Aligns items vertically in the center */
+  width: 100%; /* Ensure the navbar takes up the full width of the header */
+  padding: 0 20px; /* Add some padding for spacing */
+ }
+ 
+ 
+ 
+ .view {
+  display: flex;
+  gap: 10px; /* Adds some space between the buttons */
+ }
+ 
+ /* Optional: Style the buttons */
+ .view button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #dfb684;
+  color: black;
+ }
+ 
+ .view button:hover {
+  background-color: #0056b3;
+ }
+ 
 
 // .course-details {
 //    background-color: #D3D0CB;
@@ -120,7 +146,7 @@
 
 /* General styles */
 body.back {
-  background-image: url('https://i.pinimg.com/originals/3e/d6/60/3ed6608a174dcf72b41f3f85d9af6e4e.jpg');
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-blue-cram-school-border-summer-training-course-image_789185.jpg');
   background-size: cover; /* Cover the entire body with the image */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -161,7 +187,7 @@ body.back {
  
  .course-details {
   padding: 40px; 
-  background-color:#D3D0CB;  
+  background-color:#efd6ab;  
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

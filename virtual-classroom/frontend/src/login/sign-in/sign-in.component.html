@@ -1,104 +1,55 @@
-<div class="signInWrapper">
-  <div class="imageWrapper">
-    <img
-      class="image"
-      src="https://static.vecteezy.com/system/resources/thumbnails/003/689/228/small/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"
-    />
-  </div>
-  <div class="formWrapper">
-    <div class="headingContainer">
-      <h1 class="heading">Sign in your account</h1>
-    </div>
-    <form
-      novalidate
-      (ngSubmit)="onLogin()"
-      [formGroup]="loginForm"
-      class="formController"
-    >
-      <div class="formFieldContainer">
-        <label for="username" class="formFieldHeading">Username</label>
-        <input
-          formControlName="Name"
-          class="formField"
-          type="text"
-          placeholder="Enter your username"
-          id="username"
-          [ngClass]="{
-            'is-invalid':
-              (loginForm.get('Name')?.touched ||
-                loginForm.get('Name')?.dirty) &&
-              !loginForm.get('Name')?.valid
-          }"
-        />
-        <span class="invalid-feedback">
-          <span *ngIf="loginForm.get('Name')?.errors?.['required']">
-            Please enter your username.
-          </span>
-        </span>
-      </div>
-      <div class="formFieldContainer">
-        <label for="password" class="formFieldHeading">Password</label>
-        <input
-          formControlName="password"
-          class="formField"
-          type="password"
-          placeholder="Enter your password"
-          id="password"
-          [ngClass]="{
-            'is-invalid':
-              (loginForm.get('password')?.touched ||
-                loginForm.get('password')?.dirty) &&
-              !loginForm.get('password')?.valid
-          }"
-        />
-        <span class="invalid-feedback">
-          <span *ngIf="loginForm.get('password')?.errors?.['required']">
-            Please enter password
-          </span>
-        </span>
-      </div>
-      <div class="formFieldContainer">
-        <label for="role" class="formFieldHeading">Role</label>
-        <select
-          formControlName="Role"
-          class="formField"        
-         id="role"
-          [ngClass]="{
-            'is-invalid':
-              (loginForm.get('Role')?.touched ||
-                loginForm.get('Role')?.dirty) &&
-              !loginForm.get('Role')?.valid
-          }"
-        >
-        <option value="admin">Admin</option>
-          <option value="student">Student</option>
-          <option value="teacher">Teacher</option>
-        </select>
-        <span class="invalid-feedback">
-          <span *ngIf="loginForm.get('role')?.errors?.['required']">
-            Please select a role.
-          </span>
-        </span>
-      </div>
 
-      <div class="signInButtonContainer">
-        <button
-          type="submit"
-          [ngClass]="{
-            'is-invalid': !loginForm.valid
-          }"
-          class="signInButton"
-        >
-          Sign in
-        </button>
-      </div>
-    </form>
-    <div class="loginWrapper">
-      <div class="loginHeading">- OR -</div>
-      <div class="loginContainer">
-        <p class="loginText">Create an Account?</p>
-        <button (click)="Signup()" class="loginLink">Sign Up</button>
-      </div>
-    </div>
+<section class="vh-100">
+  <div class="container py-5 h-100"> 
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-lg-7 col-xl-6">
+          <img src="https://png.pngtree.com/background/20220721/original/pngtree-real-photos-of-empty-classroom-blue-seats-picture-image_1702197.jpg" class="img-fluid" alt="Phone image">
+        </div>
+       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+         <div class="signInWrapper">
+           <div class="headingContainer">
+             <h1 class="heading">Sign in your account</h1>
+           </div>
+           <form novalidate (ngSubmit)="onLogin()" [formGroup]="loginForm" class="formController">
+             <div class="formFieldContainer">
+               <label for="username" class="formFieldHeading">Username</label>
+               <input formControlName="Name" class="formField" type="text" placeholder="Enter your username" id="username" [ngClass]="{'is-invalid': (loginForm.get('Name')?.touched || loginForm.get('Name')?.dirty) && !loginForm.get('Name')?.valid}"/>
+               <span class="invalid-feedback">
+                 <span *ngIf="loginForm.get('Name')?.errors?.['required']">Please enter your username.</span>
+               </span>
+             </div>
+             <div class="formFieldContainer">
+               <label for="password" class="formFieldHeading">Password</label>
+               <input formControlName="password" class="formField" type="password" placeholder="Enter your password" id="password" [ngClass]="{'is-invalid': (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) && !loginForm.get('password')?.valid}"/>
+               <span class="invalid-feedback">
+                 <span *ngIf="loginForm.get('password')?.errors?.['required']">Please enter password</span>
+               </span>
+             </div>
+             <div class="formFieldContainer">
+               <label for="role" class="formFieldHeading">Role</label>
+               <select formControlName="Role" class="formField" id="role" [ngClass]="{'is-invalid': (loginForm.get('Role')?.touched || loginForm.get('Role')?.dirty) && !loginForm.get('Role')?.valid}">
+                 <option value="admin">admin</option>
+                 <option value="student">student</option>
+                 <option value="teacher">teacher</option>
+               </select>
+               <span class="invalid-feedback">
+                 <span *ngIf="loginForm.get('Role')?.errors?.['required']">Please select a role.</span>
+               </span>
+             </div>
+             <div class="signInButtonContainer">
+               <button (click)="onLogin()" [ngClass]="{'is-invalid': !loginForm.valid}" class="signInButton">Sign in</button>
+             </div>
+           </form>
+           <div class="loginWrapper">
+             <div class="loginHeading">- OR -</div>
+             <div class="loginContainer">
+               <p class="loginText">Create an Account?</p>
+               <button (click)="Signup()" class="loginLink">Sign Up</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
   </div>
-</div>
+ </section>
+ 

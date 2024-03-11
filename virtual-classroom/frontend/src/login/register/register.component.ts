@@ -38,14 +38,15 @@ export class RegisterComponent implements OnInit {
       );
     }
   }
+  dashboard(){
+    this.router.navigate(['/register']);
+  }
 
   handleResponse(response: any): void {
     console.log(response);
     this.router.navigate(['/dashboard']);
-    if (this.signupForm && this.signupForm.valid) {
-      sessionStorage.setItem('role', this.signupForm.get('Role')?.value);
-      sessionStorage.setItem('student', this.signupForm.get('student')?.value);
-      sessionStorage.setItem('teacher', this.signupForm.get('teacher')?.value);
+    if (this.signupForm && this.signupForm.valid) { 
+      sessionStorage.setItem('student', this.signupForm.get('student')?.value); 
     } else {
       this.errorMessage = 'Error occurred during login. Please try again.';
     }

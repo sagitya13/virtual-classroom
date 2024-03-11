@@ -1,143 +1,141 @@
-<div class="signInWrapper">
-  <div class="imageWrapper">
-    <img class="image" src="https://i.pinimg.com/564x/2e/3f/43/2e3f43d45005cf8bc9f028b8a00abb9d.jpg " alt="Signup" />
-  </div>
-  <div class="formWrapper">
-    <div class="headingContainer">
-      <h1 class="heading">Sign up for an account</h1>
-    </div>
-    <form
-      novalidate
-      (ngSubmit)="onSignup()"
-      [formGroup]="signupForm"
-      class="formController"
-    >
-      <div class="formFieldContainer">
-        <label for="id" class="formFieldHeading">ID</label>
-        <input
-          formControlName="id"
-          class="formField"
-          type="text"
-          placeholder="Enter your ID"
-          id="id"
-          [ngClass]="{
-            'is-invalid':
-              (signupForm.get('id')?.touched || signupForm.get('id')?.dirty) &&
-              !signupForm.get('id')?.valid
-          }"
-        />
-        <span class="invalid-feedback">
-          <span *ngIf="signupForm.get('id')?.errors?.['required']">
-            Please enter your ID.
-          </span>
-        </span>
-      </div>
-      <div class="formFieldContainer">
-        <label for="name" class="formFieldHeading">Name</label>
-        <input
-          formControlName="name"
-          class="formField"
-          type="text"
-          placeholder="Enter your name"
-          id="name"
-          [ngClass]="{
-            'is-invalid':
-              (signupForm.get('name')?.touched ||
-                signupForm.get('name')?.dirty) &&
-              !signupForm.get('name')?.valid
-          }"
-        />
-        <span class="invalid-feedback">
-          <span *ngIf="signupForm.get('name')?.errors?.['required']">
-            Please enter your name.
-          </span>
-        </span>
-      </div>
-      <div class="formFieldContainer">
-        <label for="email" class="formFieldHeading">E-mail</label>
-        <input
-          class="formField"
-          type="email"
-          placeholder="Enter your email"
-          id="email"
-          [ngClass]="{
-            'is-invalid':
-              (signupForm.get('email')?.touched ||
-                signupForm.get('email')?.dirty) &&
-              !signupForm.get('email')?.valid
-          }"
-        />
-        <span class="invalid-feedback">
-          <span *ngIf="signupForm.get('email')?.errors?.['required']">
-            Please enter your email.
-          </span>
-          <span *ngIf="signupForm.get('email')?.errors?.['email']">
-            Please enter a valid email.
-          </span>
-        </span>
-      </div>
-      <div class="formFieldContainer">
-        <label for="password" class="formFieldHeading">Password</label>
-        <input
-          formControlName="password"
-          class="formField"
-          type="password"
-          placeholder="Enter your password"
-          id="password"
-          [ngClass]="{
-            'is-invalid':
-              (signupForm.get('password')?.touched ||
-                signupForm.get('password')?.dirty) &&
-              !signupForm.get('password')?.valid
-          }"
-        />
-        <span class="invalid-feedback">
-          <span *ngIf="signupForm.get('password')?.errors?.['required']">
-            Please enter your password.
-          </span>
-        </span>
-      </div>
-      <div class="formFieldContainer">
-        <label for="role" class="formFieldHeading">Role</label>
-        <select
-          formControlName="role"
-          class="formField"
-          id="role"
-          [ngClass]="{
-            'is-invalid':
-              (signupForm.get('role')?.touched ||
-                signupForm.get('role')?.dirty) &&
-              !signupForm.get('role')?.valid
-          }"
-        >
-          <option value="admin">Admin</option>
-          <option value="student">Student</option>
-          <option value="teacher">Teacher</option>
-        </select>
-        <span class="invalid-feedback">
-          <span *ngIf="signupForm.get('role')?.errors?.['required']">
-            Please select a role.
-          </span>
-        </span>
-      </div>
-      <div class="signInButtonContainer">
-        <button
-          type="submit"
-          [ngClass]="{
-            'is-invalid': !signupForm.valid
-          }"
-          class="signInButton"
-        >
-          Sign up
-        </button>
-      </div>
-    </form>
-    <div class="loginWrapper">
-      <div class="loginHeading">- OR -</div>
-      <div class="loginContainer">
-        <p class="loginText">Already have an account?</p>
-        <a class="loginLink" [routerLink]="['/sign-in']">Log in</a>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+    
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+              <div class="signInWrapper">
+                <div class="headingContainer">
+                  <h1 class="heading">Sign up for an account</h1>
+                </div>
+                <form
+                  novalidate
+                  (ngSubmit)="onSignup()"
+                  [formGroup]="signupForm"
+                  class="formController"
+                >
+                  <div class="formFieldContainer">
+                    <label for="id" class="formFieldHeading">ID</label>
+                    <input
+                      formControlName="id"
+                      class="formField"
+                      type="text"
+                      placeholder="Enter your ID"
+                      id="id"
+                      [ngClass]="{
+                        'is-invalid':
+                          (signupForm.get('id')?.touched || signupForm.get('id')?.dirty) &&
+                          !signupForm.get('id')?.valid
+                      }"
+                    />
+                    <span class="invalid-feedback">
+                      <span *ngIf="signupForm.get('id')?.errors?.['required']">
+                        Please enter your ID.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="formFieldContainer">
+                    <label for="name" class="formFieldHeading">Name</label>
+                    <input
+                      formControlName="name"
+                      class="formField"
+                      type="text"
+                      placeholder="Enter your name"
+                      id="name"
+                      [ngClass]="{
+                        'is-invalid':
+                          (signupForm.get('name')?.touched || signupForm.get('name')?.dirty) &&
+                          !signupForm.get('name')?.valid
+                      }"
+                    />
+                    <span class="invalid-feedback">
+                      <span *ngIf="signupForm.get('name')?.errors?.['required']">
+                        Please enter your name.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="formFieldContainer">
+                    <label for="email" class="formFieldHeading">E-mail</label>
+                    <input
+                      
+                      class="formField"
+                      type="email"
+                      placeholder="Enter your email"
+                      id="email"
+                      
+                    />
+                    <span class="invalid-feedback">
+                      <span *ngIf="signupForm.get('email')?.errors?.['required']">
+                        Please enter your email.
+                      </span>
+                      <span *ngIf="signupForm.get('email')?.errors?.['email']">
+                        Please enter a valid email.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="formFieldContainer">
+                    <label for="password" class="formFieldHeading">Password</label>
+                    <input
+                      formControlName="password"
+                      class="formField"
+                      type="password"
+                      placeholder="Enter your password"
+                      id="password"
+                      [ngClass]="{
+                        'is-invalid':
+                          (signupForm.get('password')?.touched || signupForm.get('password')?.dirty) &&
+                          !signupForm.get('password')?.valid
+                      }"
+                    />
+                    <span class="invalid-feedback">
+                      <span *ngIf="signupForm.get('password')?.errors?.['required']">
+                        Please enter your password.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="formFieldContainer">
+                    <label for="role" class="formFieldHeading">Role</label>
+                    <select
+                      formControlName="role"
+                      class="formField"
+                      id="role"
+                      [ngClass]="{
+                        'is-invalid':
+                          (signupForm.get('role')?.touched || signupForm.get('role')?.dirty) &&
+                          !signupForm.get('role')?.valid
+                      }"
+                    > 
+                      <option value="student">Student</option> 
+                    </select>
+                    <span class="invalid-feedback">
+                      <span *ngIf="signupForm.get('role')?.errors?.['required']">
+                        Please select a role.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="signInButtonContainer">
+                    <button (click)="dashboard()"
+                      type="submit"
+                      [ngClass]="{
+                        'is-invalid': !signupForm.valid
+                      }"
+                      class="signInButton"
+                    >
+                      Sign up
+                    </button>
+                  </div>
+                </form>
+                <div class="loginWrapper">
+                  <div class="loginHeading">- OR -</div>
+                  <div class="loginContainer">
+                    <p class="loginText">Already have an account?</p>
+                    <a class="loginLink" [routerLink]="['/sign-in']">Log in</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     </section>
+     
+
+      

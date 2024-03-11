@@ -1,7 +1,13 @@
 <header>
   <div class="navbar">
     <div class="navbar-logo">{{ selectedCourse.name }}</div>
-    <nav></nav>
+    <div class="view">
+      <button (click)="Quiz()" *ngIf="role == 'student'">Start Quizzzz</button>
+      <button (click)="material()">Materials</button>
+      <button (click)="video()">Join class</button>
+      <button (click)="openchat()">Chat</button>
+      <button (click)="dashboard()">Back</button>
+    </div>
   </div>
 </header>
 
@@ -40,11 +46,5 @@
       </div>
     </div>
   </div>
-  <div class="view">
-    <button (click)="Quiz()" *ngIf="role == 'student'">Start Quizzzz</button>
-    <button (click)="material()">Materials</button>
-    <button (click)="video()">Join class</button>
-    <button (click)="openchat()">Chat</button>
-    <button (click)="dashboard()">Back</button>
-  </div>
+  
 </body>
