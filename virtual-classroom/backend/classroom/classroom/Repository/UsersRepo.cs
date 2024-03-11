@@ -6,6 +6,7 @@ using System.Text;
 using System.Security.Cryptography;
 using static classroom.Repository.UsersRepo;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Identity;
 namespace classroom.Repository
 {
     public class UsersRepo : IUsersRepo
@@ -65,7 +66,7 @@ namespace classroom.Repository
 
         }
 
-        public Users AuthenticateUser(string name, string providedPassword)
+        public Users AuthenticateUser(string name, string providedPassword,string Role)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -86,12 +87,14 @@ namespace classroom.Repository
                         string hashedPassword = builder.ToString();
 
                         // Create SQL command to retrieve user details by name and compare hashed passwords
-                        string sql = "SELECT Id, Name, Password, Role FROM Users WHERE Name = @name AND Password = @password";
+                        string sql = "SELECT Id, Name, Password, Role FROM Users WHERE Name = @name AND Password = @password and Role=@Role";
 
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
                             command.Parameters.AddWithValue("@name", name);
                             command.Parameters.AddWithValue("@password", hashedPassword);
+                            command.Parameters.AddWithValue("@Role", Role);
+
 
                             // Execute the query and retrieve results
                             using (SqlDataReader reader = command.ExecuteReader())

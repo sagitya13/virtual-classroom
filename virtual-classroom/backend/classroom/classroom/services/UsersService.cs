@@ -21,9 +21,9 @@ namespace classroom.services
             _usersRepo.CreateUser(user); 
         }
 
-        public Users AuthenticateUser(string name, string providedPassword)
+        public Users AuthenticateUser(string name, string providedPassword, string Role)
         {
-            return _usersRepo.AuthenticateUser(  name,   providedPassword);    
+            return _usersRepo.AuthenticateUser(  name,   providedPassword,  Role);    
         }
         
 

@@ -34,7 +34,7 @@ namespace classroom.Controllers
         {
             try
             {
-                var user = _userService.AuthenticateUser(model.Name, model.Password);
+                var user = _userService.AuthenticateUser(model.Name, model.Password,model.Role);
 
                 if (user != null)
                 { 
