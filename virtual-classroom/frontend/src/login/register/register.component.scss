@@ -1,14 +1,4 @@
-/* General form styling */
- 
- .signInWrapper {
-  background-color: #acc9e8;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
- 
- }
- 
+
  .col-md-7 .col-lg-7 .col-xl-6 img
  {
   height: auto;
@@ -19,12 +9,8 @@
  .heading {
   text-align: center;
   color: #333;
-  margin-bottom: 20px;
  }
  
- .formFieldContainer {
-  margin-bottom: 20px;
- }
  .col-md-7.col-lg-7.col-xl-6 img {
   width: 100%; /* Adjusts the width of the image to 100% of the div */
   height: auto; /* Keeps the aspect ratio of the image */
@@ -38,7 +24,7 @@
  .formField {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ced4da;
+  border: 1px solid #315f8d;
   border-radius: 5px;
   font-size: 16px;
  }
@@ -50,7 +36,6 @@
  
  .invalid-feedback {
   display: block;
-  margin-top: 5px;
   color: #dc3545;
  }
  
@@ -69,13 +54,11 @@
  }
  
  .loginWrapper {
-  text-align: center;
-  margin-top: 20px;
+  text-align: center; 
  }
  
  .loginHeading {
   color: #6c757d;
-  margin-bottom: 10px;
  }
  
  .loginLink {
@@ -91,14 +74,20 @@
  .loginLink:hover {
   background-color: #0056b3;
  }
- 
- .vh-100{
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa81lgsLN6sBqSxaDJMgBvkT7XVlNN8IlWCP1hNeTpjt3rbzTpZSoB33t1zHQiMhMkUGk&usqp=CAU');
-  background-size: cover; /* Scales the background image to be as large as possible */
-  background-position: center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
-  background-blend-mode: multiply; 
-}
+ .vh-100::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://png.pngtree.com/background/20220721/original/pngtree-real-photos-of-empty-classroom-blue-seats-picture-image_1702197.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  z-index: -1;
+ }
 .vh-100 {
   height: 100vh; /* Ensures the section takes up the full viewport height */
   overflow:hidden; /* Allows for scrolling within the section if content overflows */
@@ -106,14 +95,16 @@
  
  .container {
   height: 100%; /* Ensures the container takes up the full height of its parent */
+  padding: 0px !important;
  }
  
  .signInWrapper {
-  background-color: #acc9e8;
+  background-color:rgba(255,255,255,0.7);
   padding: 20px;
+  font-weight: 100;
   border-radius: 10px;
+  font-size: large;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* Adjust the height as needed to fit within the viewport */
-  height: 80vh; /* Example: 80% of the viewport height */
-  overflow: auto; /* Allows for scrolling within the signInWrapper if content overflows */
+  height: 95vh; 
  }

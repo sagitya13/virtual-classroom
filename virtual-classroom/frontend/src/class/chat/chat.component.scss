@@ -1,10 +1,29 @@
 .page {
-    background-color: #bfd6eb;
-}
-
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+   }
+   
+   .page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://rss.org.uk/RSS/media/newsletters/2023/have-your-say-stock.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* Adjust this value to change the transparency */
+    z-index: -1;
+   }
+   
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #bfd6eb;
+    background-color: #f9f9f9;
     // background-image: src="";
 }
 
@@ -23,7 +42,7 @@ body {
     max-width: 450px; 
     margin-bottom: 15px; 
     padding: 15px; 
-    background-color: #d7c2a9;
+    background-color: #65afe8;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -70,7 +89,7 @@ body {
     width: 100%;
     max-width: 450px; 
     padding: 15px; 
-    background-color: #d7c2a9;
+    background-color: #65afe8;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow-y: auto;

@@ -1,16 +1,174 @@
 <div>
   <div class="navbar">
+    <div class="navbar-logo"><h1>Courses</h1>
 
-    
+    </div>
+    <div class="view">
+      <span
+      class="material-symbols-outlined"
+      (click)="toggleSignupForm()"
+      *ngIf="role == 'admin'"
+    >
+      person_add
+    </span>
+
     <span
       class="material-symbols-outlined"
       (click)="toggleForm()"
-      *ngIf="role == 'admin'||role=='teacher'"
+      *ngIf="role == 'admin' || role == 'teacher'"
     >
       add_task
     </span>
     <span class="material-symbols-outlined" (click)="signout()"> logout </span>
     <br />
+  </div>
+</div>
+  <div *ngIf="showSignupForm">
+    <!-- Insert the signup form HTML code here -->
+    
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="col-md-7 col-xl-5 offset-xl-1">
+            <div class="signInWrapper">
+              <div class="headingContainer">
+                <h1 class="heading">Add Student or Teacher</h1>
+              </div>
+              <form
+                novalidate
+                (ngSubmit)="onSignup()"
+                [formGroup]="signupForm"
+                class="formController"
+              >
+                <div class="formFieldContainer">
+                  <label for="id" class="formFieldHeading">ID</label>
+                  <input
+                    formControlName="id"
+                    class="formField"
+                    type="text"
+                    placeholder="Enter your ID"
+                    id="id"
+                    [ngClass]="{
+                      'is-invalid':
+                        (signupForm.get('id')?.touched ||
+                          signupForm.get('id')?.dirty) &&
+                        !signupForm.get('id')?.valid
+                    }"
+                  />
+                  <span class="invalid-feedback">
+                    <span *ngIf="signupForm.get('id')?.errors?.['required']">
+                      Please enter your ID.
+                    </span>
+                  </span>
+                </div>
+                <div class="formFieldContainer">
+                  <label for="name" class="formFieldHeading">Name</label>
+                  <input
+                    formControlName="name"
+                    class="formField"
+                    type="text"
+                    placeholder="Enter your name"
+                    id="name"
+                    [ngClass]="{
+                      'is-invalid':
+                        (signupForm.get('name')?.touched ||
+                          signupForm.get('name')?.dirty) &&
+                        !signupForm.get('name')?.valid
+                    }"
+                  />
+                  <span class="invalid-feedback">
+                    <span *ngIf="signupForm.get('name')?.errors?.['required']">
+                      Please enter your name.
+                    </span>
+                  </span>
+                </div>
+                <div class="formFieldContainer">
+                  <label for="email" class="formFieldHeading">E-mail</label>
+                  <input
+                    formControlName="email"
+                    class="formField"
+                    type="email"
+                    placeholder="Enter your email"
+                    id="email"
+                    [ngClass]="{
+                      'is-invalid':
+                        (signupForm.get('email')?.touched ||
+                          signupForm.get('email')?.dirty) &&
+                        !signupForm.get('email')?.valid
+                    }"
+                  />
+                  <span class="invalid-feedback">
+                    <span *ngIf="signupForm.get('email')?.errors?.['required']">
+                      Please enter your email.
+                    </span>
+                    <span *ngIf="signupForm.get('email')?.errors?.['email']">
+                      Please enter a valid email.
+                    </span>
+                  </span>
+                </div>
+                <div class="formFieldContainer">
+                  <label for="password" class="formFieldHeading"
+                    >Password</label
+                  >
+                  <input
+                    formControlName="password"
+                    class="formField"
+                    type="password"
+                    placeholder="Enter your password"
+                    id="password"
+                    [ngClass]="{
+                      'is-invalid':
+                        (signupForm.get('password')?.touched ||
+                          signupForm.get('password')?.dirty) &&
+                        !signupForm.get('password')?.valid
+                    }"
+                  />
+                  <span class="invalid-feedback">
+                    <span
+                      *ngIf="signupForm.get('password')?.errors?.['required']"
+                    >
+                      Please enter your password.
+                    </span>
+                  </span>
+                </div>
+                <div class="formFieldContainer">
+                  <label for="role" class="formFieldHeading">Role</label>
+                  <select
+                    formControlName="role"
+                    class="formField"
+                    id="role"
+                    [ngClass]="{
+                      'is-invalid':
+                        (signupForm.get('role')?.touched ||
+                          signupForm.get('role')?.dirty) &&
+                        !signupForm.get('role')?.valid
+                    }"
+                  >
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                  </select>
+                  <span class="invalid-feedback">
+                    <span *ngIf="signupForm.get('role')?.errors?.['required']">
+                      Please select a role.
+                    </span>
+                  </span>
+                </div>
+                <div class="signInButtonContainer">
+                  <button
+                    (click)="dashboard()"
+                    type="submit"
+                    [ngClass]="{
+                      'is-invalid': !signupForm.valid
+                    }"
+                    class="signInButton"
+                  >
+                    Sign up
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 
   <div *ngIf="showForm" class="form-container">
@@ -57,7 +215,7 @@
             </div>
             <div class="course-fav-cost row">
               <div class="course-rating-star">
-                <small>Rating</small>
+                <strong>Rating</strong>
                 <br />
                 <div class="course-rating">
                   <span
@@ -70,18 +228,20 @@
                 </div>
               </div>
               <div class="course-fav-price text-right">
-                <small>Price</small>
-                <div class="price-dollar">₹234.50</div>
+                <strong>Price</strong>
+                <div class="price-dollar">
+                  <h2><b>₹234.50</b></h2>
+                </div>
               </div>
             </div>
             <div class="course-card-foot">
               <button class="button" (click)="more_details(course.id, course)">
-               Explore class
+                Explore class
               </button>
               <span
                 class="material-symbols-outlined"
                 (click)="deleteCourse(course.id)"
-                *ngIf="role == 'admin'||role=='teacher'"
+                *ngIf="role == 'admin' || role == 'teacher'"
                 >delete</span
               >
             </div>

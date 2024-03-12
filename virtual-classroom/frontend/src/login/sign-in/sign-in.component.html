@@ -2,31 +2,31 @@
 <section class="vh-100">
   <div class="container py-5 h-100"> 
       <div class="row d-flex align-items-center justify-content-center h-100">
-        <div class="col-lg-7 col-xl-6">
+        <!-- <div class="col-lg-7 col-xl-6">
           <img src="https://png.pngtree.com/background/20220721/original/pngtree-real-photos-of-empty-classroom-blue-seats-picture-image_1702197.jpg" class="img-fluid" alt="Phone image">
-        </div>
+        </div> -->
        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
          <div class="signInWrapper">
            <div class="headingContainer">
-             <h1 class="heading">Sign in your account</h1>
+             <h1 class="heading"><strong>Sign in your account</strong></h1>
            </div>
            <form novalidate (ngSubmit)="onLogin()" [formGroup]="loginForm" class="formController">
              <div class="formFieldContainer">
-               <label for="username" class="formFieldHeading">Username</label>
+               <label for="username" class="formFieldHeading"><strong><h1>Name</h1></strong></label>
                <input formControlName="Name" class="formField" type="text" placeholder="Enter your username" id="username" [ngClass]="{'is-invalid': (loginForm.get('Name')?.touched || loginForm.get('Name')?.dirty) && !loginForm.get('Name')?.valid}"/>
                <span class="invalid-feedback">
                  <span *ngIf="loginForm.get('Name')?.errors?.['required']">Please enter your username.</span>
                </span>
              </div>
              <div class="formFieldContainer">
-               <label for="password" class="formFieldHeading">Password</label>
+               <label for="password" class="formFieldHeading"><strong><h1>Password</h1></strong></label>
                <input formControlName="password" class="formField" type="password" placeholder="Enter your password" id="password" [ngClass]="{'is-invalid': (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) && !loginForm.get('password')?.valid}"/>
                <span class="invalid-feedback">
                  <span *ngIf="loginForm.get('password')?.errors?.['required']">Please enter password</span>
                </span>
              </div>
              <div class="formFieldContainer">
-               <label for="role" class="formFieldHeading">Role</label>
+               <label for="role" class="formFieldHeading"><strong><h1>Role</h1></strong></label>
                <select formControlName="Role" class="formField" id="role" [ngClass]="{'is-invalid': (loginForm.get('Role')?.touched || loginForm.get('Role')?.dirty) && !loginForm.get('Role')?.valid}">
                  <option value="admin">admin</option>
                  <option value="student">student</option>

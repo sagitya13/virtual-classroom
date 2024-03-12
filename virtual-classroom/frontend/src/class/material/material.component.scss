@@ -1,8 +1,9 @@
 body {
     margin: 0;
     font-family: 'Oswald', sans-serif;
-    color: #3b9959;
-    
+    color: #e8e5df;
+    height: 100%;
+    width: auto;
    }
    .navbar {
     background-color: #393E41;
@@ -17,30 +18,56 @@ body {
    .navbar-brand {
     color: #f8f9fb;
    }
- .back{
-    background-color: #bfd6eb;
- }
-   
+   .back {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply;
+      height: 100%;
+      width: auto;
+     }
+     
+     .back::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://media.istockphoto.com/id/480762174/photo/books-in-the-bookshelf.jpg?s=612x612&w=0&k=20&c=2lmffbBknzchm7qH5N4Dw-cB0j1YJfgskdxFD40FDeM=');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      // opacity: 0.6; /* Adjust this value to change the transparency of the background image */
+      z-index: -1;
+     }
+     
    button {
     color: white; 
     font-family: 'Oswald', sans-serif;
-    background-color: #a34dae;
+    background-color: #3e51dd;
     font-size: 20px;
     
     border-radius: 15px; 
    }
    
+ 
    .vin {
-    color: #050505;
-    margin-left: 35%;
-    margin-top: 5%;
-    border: 4px solid black;
-    border-radius: 15px;
-    padding: 65px;
-    width: 30%; 
-    height: 60%; 
-   }
-   
+      color: #050505;
+      margin-left: 35%;
+      margin-top: 5%;
+      // border: 4px solid black;
+      border-radius: 15px;
+      padding: 50px;
+      width: 30%; 
+      height: 60%; 
+      background-color: rgba(255, 255, 255, 0.3);
+      // background-color: rgba(111, 134, 234, 0.7); /* Darker background color */
+     
+  }
+
+  
    #group, #year, #courseName, #file {
     margin-left: 1%;
    }
@@ -59,33 +86,52 @@ body {
     width: 100%;  
     border-collapse: collapse;  
     margin-top: 20px; 
+    font-size: large;
+   //  font-weight:bold;
+    color: #000000;
    }
  
    .material-list-container- .thead-dark th {
-    background-color: #343a40; 
-    color: white;  
+    background-color: #000001; 
+    color: rgb(255, 255, 255);  
     padding: 10px;  
     font-size: 16px; 
+    
    }
     
    .material-list-container- .table tbody tr {
     border-bottom: 1px solid #ddd;  
+    background-color: rgba(255, 255, 255, 0.3);
    }
     
-   .material-list-container- .table td,
+
    .material-list-container- .table th {
     padding: 10px;  
     text-align: left; 
+     background-color: rgba(5, 4, 4, 0.5);
+   }
+
+   .material-list-container- .table td{
+      padding: 10px;  
+      text-align: left; 
+       background-color: rgba(239, 227, 227, 0.5);
    }
     
    .material-list-container- .table a {
-    color: #007bff; 
+    color: black; 
     text-decoration: none; 
    }
     
    .material-list-container- .table a:hover {
     color: #0056b3; 
     text-decoration: underline;  
+   }
+
+   .materialLinkCell{
+      max-width: 15ch;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow-x: hidden;
    }
    
    .topnav a {

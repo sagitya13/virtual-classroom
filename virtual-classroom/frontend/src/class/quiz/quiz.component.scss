@@ -8,6 +8,8 @@
  border-radius: 10px;
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  font-family: 'Poppins', sans-serif;
+ height: 100%;
+ width: auto;
 }
 
 .card {
@@ -16,10 +18,19 @@
  background-color: #fefcfc;
  padding: 20px;
  margin-bottom: 20px;
+ 
 }
  .bck{
-   background-color: #D3D0CB;
- }
+   background-image: url('https://t4.ftcdn.net/jpg/03/85/96/39/360_F_385963970_7YxwtPAOEnAZ4BPSzaX26EbYJhCpbZpY.jpg');
+    position: relative;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-blend-mode: multiply;
+   height: auto;
+ width: auto;
+   // background-image: url('https://media.istockphoto.com/id/1392004330/vector/professional-man-and-woman-text-messaging.jpg?s=612x612&w=0&k=20&c=eXVzZ4CJerjTNvv-J7ek2-PhE4VQBQPOKPoqjT6rQXQ=');
+}
 
 .quiz-header {
  text-align: center;
@@ -28,7 +39,9 @@
  color: #8f3535;
  margin-bottom: 20px;
 }
-
+.btn{
+   background-color: #007bff;
+}
 button[type="submit"] {
    background-color: #007bff;
    color: white;
@@ -74,7 +87,7 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #9e6bbf;  
+      background-color: #5485d8;  
     }
  }
 }

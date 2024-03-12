@@ -1,20 +1,51 @@
 /* General form styling */
 .signInWrapper {
-  background-color: #acc9e8;
+  background-color:rgba(255,255,255,0.7);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
  }
+
+  
+//  .vh-100{
+//   background-image: url('https://png.pngtree.com/background/20220721/original/pngtree-real-photos-of-empty-classroom-blue-seats-picture-image_1702197.jpg');
+//   background-size: cover; /* Scales the background image to be as large as possible */
+//   background-position: center; /* Centers the background image */
+//   background-repeat: no-repeat; /* Prevents the background image from repeating */
+//   background-blend-mode: multiply; 
+// }
+
+.vh-100 {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+ }
+ 
+ .vh-100::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://png.pngtree.com/background/20220721/original/pngtree-real-photos-of-empty-classroom-blue-seats-picture-image_1702197.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  z-index: -1;
+ }
+ 
+
  
  .heading {
   text-align: center;
   color: #333;
   margin-bottom: 20px;
  }
- .col-lg-7.col-xl-6 img {
-  width: 200%; /* Adjusts the width of the image to 100% of the div */
-  height: auto; /* Keeps the aspect ratio of the image */
- }
+
  
  
  .formFieldContainer {
@@ -47,7 +78,7 @@
  }
  
  .signInButton {
-  background-color: #007bff;
+  background-color: #3d8ee5;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -57,7 +88,7 @@
  }
  
  .signInButton:hover {
-  background-color: #0056b3;
+  background-color: #298df8;
  }
  
  .loginWrapper {
@@ -81,6 +112,6 @@
  }
  
  .loginLink:hover {
-  background-color: #0056b3;
+  background-color: #8492a0;
  }
  

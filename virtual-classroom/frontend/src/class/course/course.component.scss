@@ -1,47 +1,4 @@
- 
-
-// .back{
-//   background-color: rgb(243, 235, 243);
-// }
-// body {
-//   font-family: Arial, sans-serif;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// .container {
-//   display: flex;
-//   justify-content: space-between;
-//   padding: 20px;
-// }
-
-// .left-side {
-//   width: 60%; 
-// }
-
-// .right-side {
-//   width: 55%;  
-// }
-
-// .right-side img { 
-//     height:auto;
-//     width:100%;
-//     object-fit:cover;
-//     clip-path: polygon(0 44%, 15% 15%, 37% 34%, 61% 9%, 89% 11%, 100% 31%, 100% 85%, 80% 89%, 63% 98%, 38% 84%, 7% 95%, 0% 85%);
-//   }
- 
-
-// .list-group-item {
-//   cursor: pointer;
-// }
-
-// .course-details {
-//   padding: 20px;
-//   background-color: #D3D0CB;
-//   border-radius: 5px;
-//   margin-top: 20px;
-// }
-
+  
  
 
   header {
@@ -94,7 +51,7 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #dfb684;
+  background-color: #e8e5df;
   color: black;
  }
  
@@ -102,27 +59,7 @@ header {
   background-color: #0056b3;
  }
  
-
-// .course-details {
-//    background-color: #D3D0CB;
-//    padding: 20px;
-//    border-radius: 8px;
-//    width: 100%;
-//    max-width: 600px;  
-//    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//    margin-bottom: 20px;
-// }
-
-// .material-symbols-outlined {
-//    cursor: pointer;
-//    font-size: 24px;  
-//    color: #333;  
-//    margin-top: 20px;
-// }
-
-// .material-symbols-outlined:hover {
-//    color: #0056b3; 
-// }
+ 
 
   
   button {
@@ -146,13 +83,26 @@ header {
 
 /* General styles */
 body.back {
-  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-blue-cram-school-border-summer-training-course-image_789185.jpg');
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-summer-vacation-math-class-enrollment-background-image_783875.jpg');
   background-size: cover; /* Cover the entire body with the image */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   font-family: 'Arial', sans-serif;
  }
- 
+ body.back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-summer-vacation-math-class-enrollment-background-image_783875.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5; /* Adjust this value to change the transparency of the background image */
+  z-index: -1;
+ }
  .container {
   display: flex;
   justify-content: space-between;
@@ -175,26 +125,27 @@ body.back {
   padding: 135px;
   border-radius: 15px;
   margin-bottom: 120px;
-  background-color: rgba(255, 255, 255, 0.8);  
+  background-color: rgba(255, 255, 255, 0.5);  
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
  
  .list-group-item:hover {
-  background-color: rgba(255, 255, 255, 0.9); 
+  background-color: rgba(255, 255, 255, 0.5); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
  }
  
  .course-details {
   padding: 40px; 
-  background-color:#efd6ab;  
+  // background-color:#e8e5df;  
   border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: rgba(242, 242, 242, 0.5);
   width: 100%;  
   max-width: 800px;  
-  margin-left: auto;  
-  margin-right: auto;  
+  margin-left: 40px;  
+  margin-right: 30px;  
  }
  
  .course-details h1 {

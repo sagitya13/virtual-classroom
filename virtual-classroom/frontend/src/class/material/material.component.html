@@ -11,16 +11,16 @@
   <form [formGroup]="materialForm" (ngSubmit)="uploadMaterial()" *ngIf="role == 'admin' || role == 'teacher'">
   <div class="vin">    
      
-     <label for="fileName"><b>File Name:</b></label>
+     <label for="fileName"><strong><b>FILE NAME</b></strong></label>
      <input id="courseName" type="text" formControlName="fileName" />
      <p></p>
  <br>
-     <label for="filePath"><b>Insert File:</b></label>
-     <input type="file" (change)="handleFileInput($event)" id="file" accept="pdf/*" />
+     <label for="filePath"><strong><b>INSERT FILE</b></strong></label>
+     <input type="file" (change)="handleFileInput($event)" id="file" accept="pdf/*"  />
      <br>
      <br>
      <p></p>
-     <label for="courseId"><b>Course ID:</b></label>
+     <label for="courseId"><strong><b>COURSE ID</b></strong></label>
   <input type="number" id="courseId" formControlName="courseId" required />
   </div>
   <div align="center">
@@ -30,7 +30,7 @@
  
  
  <div class="material-list-container-">
-  <h2>Material List</h2>
+  <!-- <h2>Material List</h2> -->
   <table class="table table-sm table-striped">
       <thead class="thead-dark">
         <tr>
@@ -41,8 +41,8 @@
       <tbody>
         <tr *ngFor="let material of materials">
           <td>{{ material.fileName }}</td>
-          <td>
-            <a [href]="getFileUrl(material.filePath)" target="_blank">{{ material.filePath }}</a>
+          <td class="materialLinkCell">
+            <a [href]="getSafeUrl(material.filePath)"  target="_blank">{{ material.filePath }}</a>
           </td>
         </tr>
       </tbody>
@@ -50,5 +50,5 @@
  </div>
  
  
- <button (click)="dashboard()">Back</button>
+ <button (click)="dashboard()">BACK</button>
 </div>

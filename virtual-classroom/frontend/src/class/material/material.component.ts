@@ -4,7 +4,7 @@ import { FormControl,  FormGroup, Validators} from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Material } from 'src/shared/Model/material';
 import { MaterialService } from 'src/shared/services/material.service';
-
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-material',
   templateUrl: './material.component.html',
@@ -20,7 +20,7 @@ export class MaterialComponent implements OnInit {
   constructor(
     private ms: MaterialService,
     private ar: ActivatedRoute,
-    private router: Router
+    private router: Router,private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -92,6 +92,11 @@ export class MaterialComponent implements OnInit {
   }
   dashboard(){
     this.router.navigate(['dashboard']);
+  }
+ 
+
+  public getSafeUrl(filePath: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(filePath);
   }
   
    
