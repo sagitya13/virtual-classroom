@@ -38,8 +38,7 @@ body {
       background-image: url('https://media.istockphoto.com/id/480762174/photo/books-in-the-bookshelf.jpg?s=612x612&w=0&k=20&c=2lmffbBknzchm7qH5N4Dw-cB0j1YJfgskdxFD40FDeM=');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      // opacity: 0.6; /* Adjust this value to change the transparency of the background image */
+      background-repeat: no-repeat; 
       z-index: -1;
      }
      
@@ -56,14 +55,12 @@ body {
    .vin {
       color: #050505;
       margin-left: 35%;
-      margin-top: 5%;
-      // border: 4px solid black;
+      margin-top: 5%; 
       border-radius: 15px;
       padding: 50px;
       width: 30%; 
       height: 60%; 
-      background-color: rgba(255, 255, 255, 0.3);
-      // background-color: rgba(111, 134, 234, 0.7); /* Darker background color */
+      background-color: rgba(255, 255, 255, 0.3); 
      
   }
 

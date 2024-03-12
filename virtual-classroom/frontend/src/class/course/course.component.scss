@@ -16,8 +16,7 @@
   nav {
    display: flex;
    gap: 20px;
-  }
-  /* General styles */
+  } 
 .col {
    display: flex;
    flex-direction: column;
@@ -27,25 +26,24 @@
 }
 
 header {
-  width: 100%; /* Ensure the header takes up the full width */
+  width: 100%;  
  }
  
  .navbar {
   display: flex;
-  justify-content: space-between; /* Aligns items with space between them */
-  align-items: center; /* Aligns items vertically in the center */
-  width: 100%; /* Ensure the navbar takes up the full width of the header */
-  padding: 0 20px; /* Add some padding for spacing */
+  justify-content: space-between;  
+  align-items: center;  
+  width: 100%;  
+  padding: 0 20px; 
  }
  
  
  
  .view {
   display: flex;
-  gap: 10px; /* Adds some space between the buttons */
+  gap: 10px;  
  }
- 
- /* Optional: Style the buttons */
+  
  .view button {
   padding: 10px 20px;
   border: none;
@@ -84,9 +82,9 @@ header {
 /* General styles */
 body.back {
   background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-summer-vacation-math-class-enrollment-background-image_783875.jpg');
-  background-size: cover; /* Cover the entire body with the image */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-size: cover;  
+  background-position: center;  
+  background-repeat: no-repeat; 
   font-family: 'Arial', sans-serif;
  }
  body.back::before {
@@ -100,7 +98,7 @@ body.back {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.5; /* Adjust this value to change the transparency of the background image */
+  opacity: 0.5;  
   z-index: -1;
  }
  .container {
@@ -136,8 +134,7 @@ body.back {
  }
  
  .course-details {
-  padding: 40px; 
-  // background-color:#e8e5df;  
+  padding: 40px;   
   border-radius: 10px;
   margin-top: 60px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -155,11 +152,10 @@ body.back {
  
  .course-details p {
   margin-bottom: 10px;
-  font-size: 18px; /* Larger font size */
+  font-size: 18px;  
  }
- 
- /* Image styling */
+  
  .right-side img {
-  display: none; /* Hide the image since it's now set as a background */
+  display: none; 
  }
  
